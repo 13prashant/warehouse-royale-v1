@@ -20,7 +20,7 @@ const DropDown = ({ currentMode }) => (
   </div>
 );
 
-const performancemetric = () => {
+const Performancemetric = () => {
   const { currentMode } = useStateContext();
 
   return (
@@ -44,4 +44,4 @@ const performancemetric = () => {
   );
 };
 
-export default performancemetric;
+export default Performancemetric;
