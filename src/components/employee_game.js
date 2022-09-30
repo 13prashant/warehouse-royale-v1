@@ -1,18 +1,18 @@
-import Bins from "./bins";
-import barcode from "../assets/barcode.svg";
-import "../style/employee_game.css";
-import Sku from "./sku";
-import { useState, createRef, useEffect } from "react";
-import unsub, { updateCursor } from "../Database/firestore";
-import {room,sendMessage,cursorListner} from './webRTC';
-import { useNavigate } from "react-router-dom";
+import Bins from './bins';
+import barcode from '../assets/barcode.svg';
+import '../style/employee_game.css';
+import Sku from './sku';
+import { useState, createRef, useEffect } from 'react';
+import unsub, { updateCursor } from '../Database/firestore';
+import { room, sendMessage, cursorListner } from './webRTC';
+import { useNavigate } from 'react-router-dom';
 export default function Game() {
-  var label = "";
+  var label = '';
   var from = createRef();
   var to = createRef();
   var sku = createRef();
   var selected;
-  let expiretime = "00:30"
+  let expiretime = '00:30';
   let navigate = useNavigate();
 
   // Low medium and high complexity for data
@@ -25,33 +25,33 @@ export default function Game() {
   //admin can influence the time by default its 10 mins
 
   //prepopulation
-  //None : 
-  //Some : 
+  //None :
+  //Some :
   //many :
   const data = Array.from(
     { length: 20 },
     () =>
       String.fromCharCode(65 + Math.floor(Math.random() * 26)) +
-      "123" +
+      '123' +
       Math.floor(Math.random() * 100000).toString()
   );
   const [sku_list, setSkuList] = useState(data);
-  const [dellabel, setdelabel] = useState("");
-  const [delid, setdelid] = useState("");
-  const [skuSelected, setskuSelected] = useState("");
+  const [dellabel, setdelabel] = useState('');
+  const [delid, setdelid] = useState('');
+  const [skuSelected, setskuSelected] = useState('');
   const [coord, setcoord] = useState([]);
   useEffect(() => {
     cursorListner(setcoord);
     room();
-    }, [])
+  }, []);
 
   const handleWindowMouseMove = (event) => {
     var now = Date.now();
     if (now % 20 === 0) {
-      sendMessage(event.clientX,event.clientY);
+      sendMessage(event.clientX, event.clientY);
     }
   };
-  window.addEventListener("mousemove", handleWindowMouseMove);
+  window.addEventListener('mousemove', handleWindowMouseMove);
   const delsku = (parent, id) => {
     setdelabel(parent);
     setdelid(id);
@@ -67,24 +67,24 @@ export default function Game() {
   });
   function sendorder(label) {
     setdelabel(label);
-    setdelid("all");
+    setdelid('all');
   }
   function chooseSelected(reference) {
     if (selected) {
-      selected.current.classList = "";
+      selected.current.classList = '';
     }
     selected = reference;
-    selected.current.classList = "selected";
+    selected.current.classList = 'selected';
   }
   function updateSelected(label) {
     if (selected) {
-      if (label === "O1") {
-        label = "Order 1";
-      } else if (label === "O2") {
-        label = "Order 2";
+      if (label === 'O1') {
+        label = 'Order 1';
+      } else if (label === 'O2') {
+        label = 'Order 2';
       }
       selected.current.childNodes[1].value = label;
-      selected.current.classList = "";
+      selected.current.classList = '';
     }
   }
   function setSku(id) {
@@ -92,13 +92,13 @@ export default function Game() {
   }
   const bins = Array.from({ length: 16 }, (_, index) => {
     if (index < 4) {
-      label = "A" + (index + 1).toString();
+      label = 'A' + (index + 1).toString();
     } else if (index < 8) {
-      label = "B" + (index - 3).toString();
+      label = 'B' + (index - 3).toString();
     } else if (index < 12) {
-      label = "C" + (index - 7).toString();
+      label = 'C' + (index - 7).toString();
     } else {
-      label = "D" + (index - 11).toString();
+      label = 'D' + (index - 11).toString();
     }
     return (
       <Bins
@@ -114,30 +114,35 @@ export default function Game() {
   });
   return (
     <div>
-        <div
-          style={{
-            position: "absolute",
-            top: coord["y"],
-            left: coord["x"],
-            backgroundColor: "red",
-            color: "red",
-          }}
-        >
-          {console.log(coord)}x
-        </div>
+      <div
+        style={{
+          position: 'absolute',
+          top: coord['y'],
+          left: coord['x'],
+          backgroundColor: 'red',
+          color: 'red',
+        }}
+      >
+        {console.log(coord)}x
+      </div>
       <section className="inventory">
         <div className="barcode">
           <img
             alt="barcode"
             src={barcode}
-            onClick={() => updateSelected("Receiving")}
+            onClick={() => updateSelected('Receiving')}
           ></img>
           <h3>RECEIVING</h3>
         </div>
         <div className="sku_container">
           {sku_list.map((value, key) => (
-
-            <Sku key={key} id={value} parent={""} setSku={setSku} expiretime={expiretime}/>
+            <Sku
+              key={key}
+              id={value}
+              parent={''}
+              setSku={setSku}
+              expiretime={expiretime}
+            />
           ))}
         </div>
       </section>
@@ -146,7 +151,7 @@ export default function Game() {
         <div className="carts">
           <div>
             <Bins
-              binId={"O1"}
+              binId={'O1'}
               delsku={delsku}
               delbinId={dellabel}
               delid={delid}
@@ -154,7 +159,7 @@ export default function Game() {
               updateSelected={updateSelected}
               setSku={setskuSelected}
             ></Bins>
-            <button className="send-btn" onClick={() => sendorder("O1")}>
+            <button className="send-btn" onClick={() => sendorder('O1')}>
               Send Order 2
             </button>
           </div>
@@ -165,14 +170,14 @@ export default function Game() {
           </div>
           <div>
             <Bins
-              binId={"O2"}
+              binId={'O2'}
               delsku={delsku}
               delbinId={dellabel}
               delid={delid}
               selected={selected}
               updateSelected={updateSelected}
             ></Bins>
-            <button className="send-btn" onClick={() => sendorder("O2")}>
+            <button className="send-btn" onClick={() => sendorder('O2')}>
               Send Order 2
             </button>
           </div>
@@ -204,7 +209,7 @@ export default function Game() {
             <label ref={sku} onClick={() => chooseSelected(sku)}>
               SKU - <input type="text" name="sku" />
             </label>
-            <label >
+            <label>
               Quantity - <input type="text" name="sku" />
             </label>
             <br></br>
@@ -221,22 +226,32 @@ export default function Game() {
             onClick={() => {
               if (skuSelected) {
                 sku.current.childNodes[1].value = skuSelected;
-                sku.current.classList = "";
+                sku.current.classList = '';
               }
             }}
           ></img>
           {skuSelected}
-          <button className="send-btn black" onClick={()=>{
-            test(false)
-            console.log("created room")
-          }}>Create Room</button>
-          <button className="send-btn white" onClick={()=>{
-            navigate("/performancemetric")
-            window.removeEventListener("mousemove",handleWindowMouseMove);
-          }}>Finish Game</button>
-          <button className="submit-btn chat" onClick={()=>{
-            
-          }}>Chat</button>
+          <button
+            className="send-btn black"
+            onClick={() => {
+              test(false);
+              console.log('created room');
+            }}
+          >
+            Create Room
+          </button>
+          <button
+            className="send-btn white"
+            onClick={() => {
+              navigate('/performancemetric');
+              window.removeEventListener('mousemove', handleWindowMouseMove);
+            }}
+          >
+            Finish Game
+          </button>
+          <button className="submit-btn chat" onClick={() => {}}>
+            Chat
+          </button>
         </div>
       </section>
     </div>

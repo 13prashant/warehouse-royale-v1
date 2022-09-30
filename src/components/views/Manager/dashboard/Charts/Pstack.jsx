@@ -1,5 +1,15 @@
 import React from 'react';
-import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Legend, LineSeries, DataLabel, Inject, Tooltip, Category } from '@syncfusion/ej2-react-charts';
+import {
+  ChartComponent,
+  SeriesCollectionDirective,
+  SeriesDirective,
+  Legend,
+  LineSeries,
+  DataLabel,
+  Inject,
+  Tooltip,
+  Category,
+} from '@syncfusion/ej2-react-charts';
 
 import { useStateContext } from '../contexts/ContextProvider';
 import { pstackData1, pstackData2, pstackData3 } from '../data/dummy';

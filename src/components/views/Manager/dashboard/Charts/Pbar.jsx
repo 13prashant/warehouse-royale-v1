@@ -1,7 +1,19 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import { ChartComponent, SeriesCollectionDirective, SeriesDirective, BarSeries, Inject, Category, Tooltip } from '@syncfusion/ej2-react-charts';
-import { pbarCustomSeries, pbarPrimaryXAxis, pbarPrimaryYAxis } from '../data/dummy';
+import {
+  ChartComponent,
+  SeriesCollectionDirective,
+  SeriesDirective,
+  BarSeries,
+  Inject,
+  Category,
+  Tooltip,
+} from '@syncfusion/ej2-react-charts';
+import {
+  pbarCustomSeries,
+  pbarPrimaryXAxis,
+  pbarPrimaryYAxis,
+} from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Pbar = ({ width, height }) => {
@@ -21,7 +33,9 @@ const Pbar = ({ width, height }) => {
     >
       <Inject services={[BarSeries, Category, Tooltip]} />
       <SeriesCollectionDirective>
-        { pbarCustomSeries.map((item, index) => <SeriesDirective key={index} {...item} explode={2} />) }
+        {pbarCustomSeries.map((item, index) => (
+          <SeriesDirective key={index} {...item} explode={2} />
+        ))}
       </SeriesCollectionDirective>
     </ChartComponent>
   );

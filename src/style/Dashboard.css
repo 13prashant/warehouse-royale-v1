@@ -7,13 +7,14 @@
 .navbar {
   z-index: 10000;
 }
-@media  screen and (max-width:800px) {
-  .sidebar{
+@media screen and (max-width: 800px) {
+  .sidebar {
     z-index: 10000000;
   }
 }
 
-.e-dlg-center-center, .e-quick-popup-wrapper.e-device{
+.e-dlg-center-center,
+.e-quick-popup-wrapper.e-device {
   z-index: 1000000 !important;
 }
 
@@ -30,7 +31,7 @@
 
 /* color-picker style  */
 
- #preview {
+#preview {
   background: transparent
     url('https://ej2.syncfusion.com/react/demos/src/color-picker/images/pen.png')
     no-repeat;
@@ -42,7 +43,14 @@
   background-color: #008000;
 }
 
-.e-input-group:not(.e-float-icon-left), .e-input-group.e-success:not(.e-float-icon-left), .e-input-group.e-warning:not(.e-float-icon-left), .e-input-group.e-error:not(.e-float-icon-left), .e-input-group.e-control-wrapper:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-success:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-warning:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-error:not(.e-float-icon-left){
+.e-input-group:not(.e-float-icon-left),
+.e-input-group.e-success:not(.e-float-icon-left),
+.e-input-group.e-warning:not(.e-float-icon-left),
+.e-input-group.e-error:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper.e-success:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper.e-warning:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper.e-error:not(.e-float-icon-left) {
   border: none;
 }
 
@@ -58,7 +66,7 @@
   --color-5: #eb4034;
   --color-6: #333;
   --color-7: #4d445a;
-  --color-8: #FEFEFE;
+  --color-8: #fefefe;
 }
 
 /* Navbar */
@@ -233,9 +241,8 @@ section .form {
   padding: 10px;
   text-align: center;
   border-bottom: 1px solid #ededed;
-  color: #FFF;
+  color: #fff;
   font-weight: 700;
-
 }
 .no_conv {
   font-size: 20px;
@@ -277,7 +284,7 @@ section .form {
   height: calc(100vh - 200px);
   overflow-y: auto;
   border-bottom: 1px solid #ededed;
-  background-color: #33373E;
+  background-color: #33373e;
 }
 .message_wrapper {
   margin-top: 5px;
@@ -303,7 +310,7 @@ section .form {
   text-align: right;
 }
 .me {
-  background: #CCCCCC;
+  background: #cccccc;
   color: black;
 }
 .friend {
@@ -312,7 +319,7 @@ section .form {
 }
 .selected_user {
   background: var(--color-7);
-  color:white;
+  color: white;
 }
 .truncate {
   font-size: 14px;

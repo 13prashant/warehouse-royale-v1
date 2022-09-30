@@ -18,20 +18,20 @@
   margin-right: 10px;
 }
 
-.userListEdit{
-    border: none;
-    border-radius: 10px;
-    padding: 5px 10px;
-    background-color: #3bb077;
-    color: white;
-    cursor: pointer;
-    margin-right: 20px;
+.userListEdit {
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: #3bb077;
+  color: white;
+  cursor: pointer;
+  margin-right: 20px;
 }
 
-.userListDelete{
-    color: red;
-    font-size: 20px;
-    cursor: pointer;
+.userListDelete {
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .parentContainer {
@@ -42,11 +42,11 @@
   height: 100%;
 }
 
-.userTitleontainer{
+.userTitleontainer {
   grid-row: 1;
 }
 
-.excelSheet{
+.excelSheet {
   margin-top: 3em;
   padding: 20px 25px 50px 25px;
   margin-bottom: 5cm;
@@ -56,16 +56,15 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;;
-  
+  box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
 }
 
-.uploadTitle{
+.uploadTitle {
   color: #333333;
 }
 
-.excelButton{
-  background-color: #4CAF50; /* Green */
+.excelButton {
+  background-color: #4caf50; /* Green */
   width: 30%;
   /* height: 50%; */
   border: none;
@@ -76,20 +75,19 @@
   display: inline-block;
   font-size: 16px;
   border-radius: 8px;
-
 }
-.buttonDiv{
+.buttonDiv {
   text-align: center;
 }
 
-.uploadIcon{
+.uploadIcon {
   width: 100%;
-  color: #398EE3;
+  color: #398ee3;
   font-size: 200px;
   cursor: pointer;
 }
 
-.iconDiv{
+.iconDiv {
   text-align: center;
   /* padding: 10px 10px; */
   display: flex;
@@ -97,11 +95,11 @@
   align-items: stretch;
 }
 
-.uploadMessage{
+.uploadMessage {
   font-size: small;
   color: #959595;
 }
 
-.sub2{
+.sub2 {
   text-align: center;
 }

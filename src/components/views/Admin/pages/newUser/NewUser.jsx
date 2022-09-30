@@ -1,4 +1,4 @@
-import "./newUser.css";
+import './newUser.css';
 
 export default function NewUser() {
   return (

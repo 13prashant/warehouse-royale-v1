@@ -1,5 +1,5 @@
-import React from "react";
-import Attachment from "./images/svg/Attachment";
+import React from 'react';
+import Attachment from './images/svg/Attachment';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const MessageForm = ({ handleSubmit, text, setText, setImg }) => {
@@ -15,7 +15,7 @@ const MessageForm = ({ handleSubmit, text, setText, setImg }) => {
           type="file"
           id="img"
           accept="image/*"
-          style={{ display: "none" }}
+          style={{ display: 'none' }}
         />
         <div>
           <input

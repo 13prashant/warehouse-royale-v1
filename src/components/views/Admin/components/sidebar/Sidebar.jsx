@@ -1,7 +1,11 @@
-import "./sidebar.css";
-import { Link } from "react-router-dom";
-import {FcConferenceCall,FcPositiveDynamic, FcServices} from "react-icons/fc";
-import { TiMessages } from "react-icons/ti";
+import './sidebar.css';
+import { Link } from 'react-router-dom';
+import {
+  FcConferenceCall,
+  FcPositiveDynamic,
+  FcServices,
+} from 'react-icons/fc';
+import { TiMessages } from 'react-icons/ti';
 
 export default function Sidebar() {
   return (
@@ -11,16 +15,16 @@ export default function Sidebar() {
           <h3 className="sidebarTitle">Dashboard</h3>
           <ul className="sidebarList">
             <Link to="/" className="link">
-            <li className="sidebarListItem active">
-              <FcPositiveDynamic className="sidebarIcon" />
-              Home
-            </li>
+              <li className="sidebarListItem active">
+                <FcPositiveDynamic className="sidebarIcon" />
+                Home
+              </li>
             </Link>
           </ul>
           <ul className="sidebarList">
             <Link to="/users" className="link">
               <li className="sidebarListItem">
-                <FcConferenceCall  className="sidebarIcon" />
+                <FcConferenceCall className="sidebarIcon" />
                 Manage Users
               </li>
             </Link>

@@ -1,7 +1,7 @@
 .sidebar {
   /* flex: 1.25; */
   height: 100%;
-  background-color:rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
   position: sticky;
   /* top: 50px; */
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -37,11 +37,11 @@
 
 .sidebarListItem.active,
 .sidebarListItem:hover {
-  color : white;
+  color: white;
   background-color: #393145;
 }
 
-.sidebarIcon{
-    margin-right: 5px;
-    font-size: 30px !important;
+.sidebarIcon {
+  margin-right: 5px;
+  font-size: 30px !important;
 }

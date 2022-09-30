@@ -29,7 +29,10 @@ const UserProfile = () => {
         />
         <div>
           <p className="font-semibold text-xl dark:text-gray-200"> Het M </p>
-          <p className="text-gray-500 text-sm font-semibold dark:text-gray-400"> hmendpar@asu.edu</p>
+          <p className="text-gray-500 text-sm font-semibold dark:text-gray-400">
+            {' '}
+            hmendpar@asu.edu
+          </p>
         </div>
       </div>
       <div className="mt-5">
@@ -42,7 +45,6 @@ const UserProfile = () => {
         />
       </div>
     </div>
-
   );
 };
 

@@ -27,7 +27,15 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 );
 
 const Navbar = () => {
-  const { currentColor, activeMenu, setActiveMenu, handleClick, isClicked, setScreenSize, screenSize } = useStateContext();
+  const {
+    currentColor,
+    activeMenu,
+    setActiveMenu,
+    handleClick,
+    isClicked,
+    setScreenSize,
+    screenSize,
+  } = useStateContext();
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -51,8 +59,12 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative">
-
-      <NavButton title="Menu" customFunc={handleActiveMenu} color={currentColor} icon={<AiOutlineMenu />} />
+      <NavButton
+        title="Menu"
+        customFunc={handleActiveMenu}
+        color={currentColor}
+        icon={<AiOutlineMenu />}
+      />
       <div className="flex">
         {/* <TooltipComponent content="Profile" position="BottomCenter">
           <div
@@ -75,7 +87,7 @@ const Navbar = () => {
         </TooltipComponent> */}
 
         {/* {isClicked.chat && (<Chat />)} */}
-        {isClicked.notification && (<Notification />)}
+        {isClicked.notification && <Notification />}
         {/* {isClicked.userProfile && (<UserProfile />)} */}
       </div>
     </div>

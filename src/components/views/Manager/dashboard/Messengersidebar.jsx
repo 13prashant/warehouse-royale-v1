@@ -6,7 +6,11 @@ function messengersidebar() {
       {activeMenu && (
         <>
           <div className="flex justify-between items-center">
-            <Link to="/" onClick={handleCloseSideBar} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
+            <Link
+              to="/"
+              onClick={handleCloseSideBar}
+              className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
+            >
               <RiGovernmentFill /> <span>Messages</span>
             </Link>
             <TooltipComponent content="Menu" position="BottomCenter">
@@ -33,7 +37,6 @@ function messengersidebar() {
       )}
     </div>
   );
-};
-
+}
 
 export default messengersidebar;

@@ -1,18 +1,17 @@
-.container{
-    /* margin-top: 10px; */
-    overflow-y: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-right: 0px;
-    width: 100%;
-    flex: 1;
-    /* max-height: 100vh; */
+.container {
+  /* margin-top: 10px; */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-right: 0px;
+  width: 100%;
+  flex: 1;
+  /* max-height: 100vh; */
 }
 
-
-.link{
-    text-decoration: none;
-    color: inherit;
+.link {
+  text-decoration: none;
+  color: inherit;
 }

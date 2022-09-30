@@ -1,7 +1,7 @@
-import { createContext, useEffect, useState } from "react";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../../../../Database/config";
-import Loading from "../messenger/Loading";
+import { createContext, useEffect, useState } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../../../../../Database/config';
+import Loading from '../messenger/Loading';
 
 export const AuthContext = createContext();
 

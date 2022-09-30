@@ -1,8 +1,8 @@
-import { FiUser, FiCalendar, FiUpload} from "react-icons/fi"
-import { MdOutlineEmail, MdOutlineLocationOn } from "react-icons/md";
-import { GiSmartphone } from "react-icons/gi";
-import { Link } from "react-router-dom";
-import "./user.css";
+import { FiUser, FiCalendar, FiUpload } from 'react-icons/fi';
+import { MdOutlineEmail, MdOutlineLocationOn } from 'react-icons/md';
+import { GiSmartphone } from 'react-icons/gi';
+import { Link } from 'react-router-dom';
+import './user.css';
 
 export default function User() {
   return (
@@ -106,7 +106,7 @@ export default function User() {
                 <label htmlFor="file">
                   <FiUpload className="userUpdateIcon" />
                 </label>
-                <input type="file" id="file" style={{ display: "none" }} />
+                <input type="file" id="file" style={{ display: 'none' }} />
               </div>
               <button className="userUpdateButton">Update</button>
             </div>

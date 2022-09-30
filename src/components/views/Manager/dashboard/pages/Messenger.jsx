@@ -9,8 +9,10 @@ function Messenger() {
     // <AuthProvider>
     //   <Home/>
     // </AuthProvider>
-    <Dashboard><h1>Messenger</h1></Dashboard>
-  )
+    <Dashboard>
+      <h1>Messenger</h1>
+    </Dashboard>
+  );
 }
 
 export default Messenger;
