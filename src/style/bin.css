@@ -1,0 +1,37 @@
+.bin_body{
+    margin: 10px;
+    border: 1px black solid;
+    width: 200px;
+    height: 170px;
+}
+
+.bin_dropdown{
+    border-bottom: 1px black solid;
+    height: 70%;
+    overflow: scroll;
+}
+
+.bin_identifier{
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    height: 30%;
+}
+
+.bin_identifier img{
+    width: 40%;
+}
+
+.circle{
+    display: flex;
+    font-size: smaller;
+    margin: 5px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    background-color: #5D5FEF;
+    color: white;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
