@@ -12,6 +12,16 @@ body {
   color: #333333;
 }
 
+.login-form {
+  background: linear-gradient(
+    90deg,
+    #393145 41%,
+    #fb2d00 75%,
+    rgba(255, 192, 0, 1) 98%
+  );
+  height: 100%;
+}
+
 .box-form {
   position: fixed;
   top: 50%;
