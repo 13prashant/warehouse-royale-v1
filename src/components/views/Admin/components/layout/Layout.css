@@ -1,0 +1,16 @@
+.layout__topbar {
+  margin-bottom: 50px;
+}
+
+.layout__bottom {
+  display: flex;
+}
+
+.layout__sidebar {
+  flex-shrink: 0;
+  width: 260px;
+}
+
+.layout__outlet {
+  flex-grow: 1;
+}
