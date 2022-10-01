@@ -2,7 +2,9 @@
   flex: 4;
 }
 
-.homeWidgets {
-  display: flex;
-  margin: 20px;
+.home__chart {
+  width: 700px;
+  border: 1px solid gray;
+  padding: 2rem;
+  margin: 1rem;
 }

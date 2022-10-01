@@ -1,54 +1,78 @@
-import Chart from '../../components/chart/Chart';
-import './home.css';
-import * as React from 'react';
-import { userData } from '../../dummyData';
+import { useEffect, useState } from 'react';
+// Material Components
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+// Components
+import Chart from '../../components/chart/Chart';
+// Helpers
+import iriChartData from './helpers/iri-chart-data.json';
+// Css
+import './home.css';
+
+const metricItems = ['Point', 'IRI', 'No. of Employees', 'Individual Turnover'];
+const roundItems = [1, 2, 3, 4];
 
 export default function Home() {
-  const [pmetric, setPmetric] = React.useState('');
+  const [pMetric, setPMetric] = useState('Point');
+  const [round, setRound] = useState(1);
+  const [chartData, setChartData] = useState(iriChartData);
 
-  const handleChange = (event) => {
-    setPmetric(event.target.value);
-  };
+  useEffect(() => {
+    switch (pMetric) {
+      case 'Point':
+        setChartData(iriChartData);
+        break;
+      case 'IRI':
+        setChartData([]);
+        break;
+      case 'No. of Employees':
+        setChartData([]);
+        break;
+      case 'Individual Turnover':
+        setChartData([]);
+        break;
+
+      default:
+        setChartData([]);
+    }
+  }, [pMetric]);
 
   return (
     <div className="home">
-      <div className="metricselection">
-        <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
-          <InputLabel id="demo-simple-select-filled-label">Metric</InputLabel>
-          <Select
-            labelId="demo-simple-select-filled-label"
-            id="demo-simple-select-filled"
-            value={pmetric}
-            onChange={handleChange}
-          >
-            <MenuItem value={1}>Point</MenuItem>
-            <MenuItem value={2}>IRI</MenuItem>
-            <MenuItem value={3}>No.Of Employees</MenuItem>
-            <MenuItem value={4}>Individual turnover</MenuItem>
-            <MenuItem value={5}>No.of Messages</MenuItem>
-          </Select>
-        </FormControl>
-        <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
-          <InputLabel id="demo-simple-select-filled-label">Round</InputLabel>
-          <Select
-            labelId="demo-simple-select-filled-label"
-            id="demo-simple-select-filled"
-            value={pmetric}
-            onChange={handleChange}
-          >
-            <MenuItem value={1}>1</MenuItem>
-            <MenuItem value={2}>2</MenuItem>
-            <MenuItem value={3}>3</MenuItem>
-            <MenuItem value={4}>4</MenuItem>
-          </Select>
-        </FormControl>
-      </div>
-      <div className="App">
-        <Chart />
+      <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
+        <InputLabel id="demo-simple-select-filled-label">Metric</InputLabel>
+        <Select
+          labelId="demo-simple-select-filled-label"
+          id="demo-simple-select-filled"
+          value={pMetric}
+          onChange={(e) => setPMetric(e.target.value)}
+        >
+          {metricItems.map((elm) => (
+            <MenuItem key={elm} value={elm}>
+              {elm}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+      <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
+        <InputLabel id="demo-simple-select-filled-label">Round</InputLabel>
+        <Select
+          labelId="demo-simple-select-filled-label"
+          id="demo-simple-select-filled"
+          value={round}
+          onChange={(e) => setRound(e.target.value)}
+        >
+          {roundItems.map((elm) => (
+            <MenuItem key={elm} value={elm}>
+              {elm}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+      <div className="home__chart">
+        <Chart data={chartData} chartType="bar" />
       </div>
     </div>
   );
