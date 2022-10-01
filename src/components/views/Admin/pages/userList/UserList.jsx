@@ -1,16 +1,42 @@
-import './userList.css';
-import { DataGrid } from '@mui/x-data-grid';
-import { MdDelete, MdOutlineFileUpload } from 'react-icons/md';
-import { userRows } from '../../dummyData';
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
+// Material components
+import { DataGrid } from '@mui/x-data-grid';
+// React Icons
+import { MdDelete, MdOutlineFileUpload } from 'react-icons/md';
+// Helpers
+import { users } from './helpers';
+// Css
+import './userList.css';
 
 export default function UserList() {
-  const [data, setData] = useState(userRows);
+  const [data, setData] = useState(users);
+  const [file, setFile] = useState(null);
+  const [fileError, setFileError] = useState(null);
+
+  const fileTypes = [
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    'application/vnd.ms-excel',
+    'text/csv',
+  ];
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
+  };
+
+  const handleOnFileChange = (e) => {
+    let selected = e.target.files[0];
+    if (selected && fileTypes.includes(selected.type)) {
+      setFile(selected);
+      setFileError(null);
+    } else {
+      setFile(null);
+      setFileError('Please select a valid excel file');
+    }
+  };
+
+  const handleFileUpload = () => {
+    console.log(file);
   };
 
   const columns = [
@@ -81,17 +107,26 @@ export default function UserList() {
       <div className="excelSheet">
         <h1 className="uploadTitle"> Upload an Excelsheet Instead ! </h1>
         <div className="iconDiv">
-          <div className="sub1">
+          <label>
+            <input type="file" onChange={handleOnFileChange} />
             <MdOutlineFileUpload className="uploadIcon" />
-          </div>
+          </label>
           <div className="sub2">
+            {file && <p>{file.name}</p>}
+            {fileError && <p style={{ color: 'red' }}>{fileError}</p>}
             <h3 className="uploadMessage">
-              Click on the icon to select the Excel file.
+              Click on the icon to select the Excel file
             </h3>
           </div>
         </div>
         <div className="buttonDiv">
-          <button className="excelButton"> Upload a File </button>
+          <button
+            className="excelButton"
+            disabled={!file}
+            onClick={handleFileUpload}
+          >
+            Upload a File
+          </button>
         </div>
       </div>
     </div>
