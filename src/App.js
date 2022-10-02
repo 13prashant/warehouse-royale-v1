@@ -1,62 +1,39 @@
-import React, { useState } from 'react';
-import LoginForm from './components/LoginForm';
-import EmployeeGame from './components/EmployeeGame';
+import { useState } from 'react';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { DndProvider } from 'react-dnd';
-import { emailPasswordAuth } from './database/auth';
-// import Dashboard from './components/views/Manager/dashboard/Dashboard';
 import ADashboard from './components/views/Admin/ADashboard';
-// import { ContextProvider } from './components/views/Manager/dashboard/contexts/ContextProvider';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-// import {
-//   Myteam,
-//   Performancemetric,
-//   Recruitmentroom,
-// } from './components/views/Manager/dashboard/pages';
-// import Messenger from './components/views/Manager/dashboard/pages/Messenger';
-import './App.css';
+import LoginForm from './components/LoginForm';
+import { emailPasswordAuth } from './database/auth';
 
 function App() {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
+
   const isManager = false;
+
   if (!user && window.localStorage.admin) {
     setUser(window.localStorage.admin);
   }
+
   const Login = (details) => {
     emailPasswordAuth(details.email, details.password, setUser, setError);
   };
+
   // eslint-disable-next-line
   const Logout = () => {
     setUser('');
   };
+
   return (
-    <div className="App">
+    <>
       {user ? (
         <DndProvider backend={HTML5Backend}>
-          {/* <ContextProvider> */}
           <ADashboard />
-          {/* </ContextProvider> */}
-          {/* <ContextProvider> */}
-          {/* <BrowserRouter> */}
-          {/* <Routes> */}
-          {/* dashboard  */}
-          {/* </DndProvider><Route path="/" element={isManager ? null:<EmployeeGame/>} /> */}
-          {/* <Route path="/performancemetric" element={(<Performancemetric />)} /> */}
-
-          {/* pages  */}
-          {/* <Route path="/recruitmentroom" element={ isManager ? <Recruitmentroom />:null} /> */}
-          {/* <Route path="/messenger" element={<Messenger />} /> */}
-          {/* <Route path="/Myteam" element={<Myteam/>} /> */}
-
-          {/* </Routes> */}
-          {/* </BrowserRouter> */}
-          {/* </ContextProvider> */}
         </DndProvider>
       ) : (
         <LoginForm Login={Login} error={error} />
       )}
-    </div>
+    </>
   );
 }
 
