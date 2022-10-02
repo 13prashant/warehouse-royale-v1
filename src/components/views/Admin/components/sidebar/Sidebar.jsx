@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+// Components
+import WarehouseLogo from '../ui/WarehouseLogo';
 // Helpers
 import { menuItems } from './helpers';
 // Css
@@ -10,8 +12,12 @@ export default function Sidebar() {
 
   return (
     <div className="sidebar">
-      <div className="sidebar__wrapper">
-        <h3 className="sidebar__title">Dashboard</h3>
+      <Link to="/">
+        <div className="sidebar__logo">
+          <WarehouseLogo />
+        </div>
+      </Link>
+      <div className="sidebar__menu">
         <ul className="sidebar__menuItems">
           {menuItems.map(({ item, icon, path }) => (
             <Link key={item} to={path}>

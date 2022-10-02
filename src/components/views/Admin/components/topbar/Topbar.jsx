@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom';
-// React icons
-import { RiGovernmentFill } from 'react-icons/ri';
 // Css
 import './Topbar.css';
 
@@ -8,10 +6,7 @@ export default function Topbar() {
   return (
     <div className="topbar">
       <Link to="/">
-        <div className="topbar__logo">
-          <RiGovernmentFill className="topbar__icon" />
-          <span className="topbar__title">WareHouse Royale</span>
-        </div>
+        <span className="topbar__title">Dashboard</span>
       </Link>
       <Link to="/user">
         <div className="topbar__user">

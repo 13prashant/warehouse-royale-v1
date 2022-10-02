@@ -21,7 +21,7 @@
 }
 
 .topbar__title {
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: bold;
   color: hsl(var(--accentColor));
 }

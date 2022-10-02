@@ -5,15 +5,16 @@
   position: fixed;
 }
 
-.sidebar__wrapper {
+.sidebar__menu {
   padding: 20px;
   color: hsla(var(--primaryTextColor), 0.5);
 }
 
-.sidebar__title {
-  font-size: 15px;
-  color: hsl(var(--primaryTextColor));
-  margin: 2rem 0;
+.sidebar__logo {
+  display: flex;
+  justify-content: center;
+  height: var(--topbarHeight);
+  border-bottom: 1px solid hsla(var(--bottomColor), 0.1);
 }
 
 .sidebar__item {

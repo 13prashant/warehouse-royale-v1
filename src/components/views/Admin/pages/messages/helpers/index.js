@@ -1,3 +1,3 @@
 export const randomHsl = () => {
-  return 'hsla(' + Math.random() * 360 + ', 100%, 80%, 1)';
+  return 'hsla(' + Math.random() * 360 + ', 50%, 60%, 1)';
 };
