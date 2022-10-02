@@ -1,47 +1,30 @@
-import './sidebar.css';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  FcConferenceCall,
-  FcPositiveDynamic,
-  FcServices,
-} from 'react-icons/fc';
-import { TiMessages } from 'react-icons/ti';
+// Helpers
+import { menuItems } from './helpers';
+// Css
+import './sidebar.css';
 
 export default function Sidebar() {
+  const [activeMenu, setActiveMenu] = useState('Home');
+
   return (
     <div className="sidebar">
-      <div className="sidebarWrapper">
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Dashboard</h3>
-          <ul className="sidebarList">
-            <Link to="/" className="link">
-              <li className="sidebarListItem active">
-                <FcPositiveDynamic className="sidebarIcon" />
-                Home
+      <div className="sidebar__wrapper">
+        <h3 className="sidebar__title">Dashboard</h3>
+        <ul className="sidebar__menuItems">
+          {menuItems.map(({ item, icon, path }) => (
+            <Link key={item} to={path}>
+              <li
+                className={`sidebar__item ${activeMenu === item && 'active'}`}
+                onClick={() => setActiveMenu(item)}
+              >
+                {icon}
+                {item}
               </li>
             </Link>
-          </ul>
-          <ul className="sidebarList">
-            <Link to="/users" className="link">
-              <li className="sidebarListItem">
-                <FcConferenceCall className="sidebarIcon" />
-                Manage Users
-              </li>
-            </Link>
-            <Link to="/gamesetup" className="link">
-              <li className="sidebarListItem">
-                <FcServices className="sidebarIcon" />
-                Game Setup
-              </li>
-            </Link>
-          </ul>
-          <ul className="sidebarList">
-            <li className="sidebarListItem">
-              <TiMessages className="sidebarIcon" />
-              Messages
-            </li>
-          </ul>
-        </div>
+          ))}
+        </ul>
       </div>
     </div>
   );

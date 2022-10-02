@@ -15,7 +15,7 @@ function Adashboard() {
           <Route path="/users" element={<UserList />} />
           <Route path="/user/:userId" element={<User />} />
           <Route path="/newUser" element={<NewUser />} />
-          <Route path="/gamesetup" element={<Gamesetup />} />
+          <Route path="/game-setup" element={<Gamesetup />} />
         </Route>
       </Routes>
     </Router>
