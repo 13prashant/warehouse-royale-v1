@@ -1,5 +1,9 @@
 .layout__topbar {
-  margin-bottom: 50px;
+  position: fixed;
+  margin-left: 260px;
+  /* vw - sidebar width - topbar left padding - topbar right padding */
+  width: calc(100vw - 260px - 20px - 20px);
+  z-index: 999;
 }
 
 .layout__bottom {
@@ -13,4 +17,5 @@
 
 .layout__outlet {
   flex-grow: 1;
+  margin-top: 70px; /* topbar height */
 }

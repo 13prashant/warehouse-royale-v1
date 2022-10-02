@@ -1,28 +1,28 @@
-import React from 'react';
-import './topbar.css';
+import { Link } from 'react-router-dom';
+// React icons
 import { RiGovernmentFill } from 'react-icons/ri';
+// Css
+import './topbar.css';
 
 export default function Topbar() {
   return (
     <div className="topbar">
-      <div className="topbarWrapper">
-        <div className="topLeft">
-          <div className="logo">
-            <RiGovernmentFill />
-          </div>
-          <div className="royale">WareHouse Royale</div>
+      <Link to="/">
+        <div className="topbar__logo">
+          <RiGovernmentFill className="topbar__icon" />
+          <span className="topbar__title">WareHouse Royale</span>
         </div>
-        <div className="topRight">
+      </Link>
+      <Link to="/user">
+        <div className="topbar__user">
           <img
             src="https://asu.pure.elsevier.com/files-asset/129976187/tkull.png?w=160&f=webp"
             alt=""
-            className="topAvatar"
+            className="topbar__userImage"
           />{' '}
-          <p>
-            <span className="msg">Hi,</span> <span className="uname">Prof</span>
-          </p>
+          <span className="topbar__username">Hi, Professor</span>
         </div>
-      </div>
+      </Link>
     </div>
   );
 }
