@@ -1,10 +1,10 @@
-// React icons
 import {
   FcConferenceCall,
   FcPositiveDynamic,
   FcServices,
 } from 'react-icons/fc';
 import { TiMessages } from 'react-icons/ti';
+import { getRandomHsl } from '../../../../../../utils/functions/getRandomHsl';
 
 export const menuItems = [
   {
@@ -24,7 +24,7 @@ export const menuItems = [
   },
   {
     item: 'Messages',
-    icon: <TiMessages className="sidebar__icon" />,
+    icon: <TiMessages className="sidebar__icon" color={getRandomHsl()} />,
     path: '/messages',
   },
 ];
