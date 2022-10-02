@@ -1,9 +1,9 @@
-import './Gamesetup.css';
+import './GameSetup.css';
 import { FormLabel, FormControl, Radio, RadioGroup } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import { FormControlLabel } from '@mui/material';
 
-export default function Gamesetup() {
+export default function GameSetup() {
   const handleSubmit = (event) => {
     event.preventDefault();
 

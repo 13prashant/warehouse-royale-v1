@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // Helpers
 import { menuItems } from './helpers';
 // Css
-import './sidebar.css';
+import './Sidebar.css';
 
 export default function Sidebar() {
   const [activeMenu, setActiveMenu] = useState('Home');

@@ -7,7 +7,7 @@ import { MdDelete, MdOutlineFileUpload } from 'react-icons/md';
 // Helpers
 import { users } from './helpers';
 // Css
-import './userList.css';
+import './UserList.css';
 
 export default function UserList() {
   const [data, setData] = useState(users);
@@ -72,7 +72,7 @@ export default function UserList() {
       renderCell: (params) => {
         return (
           <>
-            <Link to={'/user/' + params.row.id}>
+            <Link to={'/users/' + params.row.id}>
               <button className="userListEdit">Edit</button>
             </Link>
             <MdDelete

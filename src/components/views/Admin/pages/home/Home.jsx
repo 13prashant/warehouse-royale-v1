@@ -9,7 +9,7 @@ import Chart from '../../components/chart/Chart';
 // Helpers
 import iriChartData from './helpers/iri-chart-data.json';
 // Css
-import './home.css';
+import './Home.css';
 
 const metricItems = ['Point', 'IRI', 'No. of Employees', 'Individual Turnover'];
 const roundItems = [1, 2, 3, 4];

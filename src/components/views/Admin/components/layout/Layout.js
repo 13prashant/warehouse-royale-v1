@@ -7,7 +7,7 @@ import Sidebar from '../sidebar/Sidebar';
 // Css
 import './Layout.css';
 
-const Layout = () => {
+export default function Layout() {
   return (
     <div className="layout">
       <div className="layout__topbar">
@@ -25,6 +25,4 @@ const Layout = () => {
       </div>
     </div>
   );
-};
-
-export default Layout;
+}

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import LoginForm from './components/LoginForm';
-import Game from './components/employee_game';
+import EmployeeGame from './components/EmployeeGame';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { DndProvider } from 'react-dnd';
-import { emailPasswordAuth } from './Database/Auth';
+import { emailPasswordAuth } from './database/auth';
 // import Dashboard from './components/views/Manager/dashboard/Dashboard';
-import Adashboard from './components/views/Admin/Adashboard';
+import ADashboard from './components/views/Admin/ADashboard';
 // import { ContextProvider } from './components/views/Manager/dashboard/contexts/ContextProvider';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import {
@@ -35,13 +35,13 @@ function App() {
       {user ? (
         <DndProvider backend={HTML5Backend}>
           {/* <ContextProvider> */}
-          <Adashboard />
+          <ADashboard />
           {/* </ContextProvider> */}
           {/* <ContextProvider> */}
           {/* <BrowserRouter> */}
           {/* <Routes> */}
           {/* dashboard  */}
-          {/* </DndProvider><Route path="/" element={isManager ? null:<Game/>} /> */}
+          {/* </DndProvider><Route path="/" element={isManager ? null:<EmployeeGame/>} /> */}
           {/* <Route path="/performancemetric" element={(<Performancemetric />)} /> */}
 
           {/* pages  */}

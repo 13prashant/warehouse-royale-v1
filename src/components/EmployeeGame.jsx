@@ -1,12 +1,12 @@
-import Bins from './bins';
 import barcode from '../assets/barcode.svg';
-import '../style/employee_game.css';
-import Sku from './sku';
+import '../style/EmployeeGame.css';
 import { useState, createRef, useEffect } from 'react';
-import unsub, { updateCursor } from '../Database/firestore';
+import unsub, { updateCursor } from '../database/firestore';
 import { room, sendMessage, cursorListner } from './webRTC';
 import { useNavigate } from 'react-router-dom';
-export default function Game() {
+import Bins from './Bins';
+import Sku from './Sku';
+export default function EmployeeGame() {
   var label = '';
   var from = createRef();
   var to = createRef();

@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useDrop } from 'react-dnd';
-import Sku from './sku';
-import '../style/bin.css';
+import '../style/Bin.css';
 import barcode from '../assets/barcode.svg';
+import Sku from './Sku';
+
 function Bins({ binId, delsku, delbinId, delid, updateSelected, setSku }) {
   const [disp, setdisp] = useState([]);
   const [parent, setparent] = useState('');

@@ -1,6 +1,6 @@
 import ApexChart from 'react-apexcharts';
 import { getRoundNames } from './helpers';
-import './chart.css';
+import './Chart.css';
 
 export default function Chart({ data, chartType }) {
   const config = {

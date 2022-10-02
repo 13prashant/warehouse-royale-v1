@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 // React icons
 import { RiGovernmentFill } from 'react-icons/ri';
 // Css
-import './topbar.css';
+import './Topbar.css';
 
 export default function Topbar() {
   return (

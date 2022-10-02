@@ -3,7 +3,7 @@ import {
   readConfig,
   addIceCandidate,
   answerlistener,
-} from '../Database/firestore';
+} from '../database/firestore';
 // const configuration = {
 //     iceServers: [
 //         {

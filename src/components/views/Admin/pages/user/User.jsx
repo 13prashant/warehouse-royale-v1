@@ -2,14 +2,14 @@ import { FiUser, FiCalendar, FiUpload } from 'react-icons/fi';
 import { MdOutlineEmail, MdOutlineLocationOn } from 'react-icons/md';
 import { GiSmartphone } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
-import './user.css';
+import './User.css';
 
 export default function User() {
   return (
     <div className="user">
       <div className="userTitleContainer">
         <h1 className="userTitle">Edit User</h1>
-        <Link to="/newUser">
+        <Link to="/new-user">
           <button className="userAddButton">Create</button>
         </Link>
       </div>
