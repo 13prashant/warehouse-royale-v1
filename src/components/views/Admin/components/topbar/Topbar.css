@@ -1,9 +1,9 @@
 .topbar {
   width: 100%;
   height: 70px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: hsla(var(--primaryBg), 0.7);
   backdrop-filter: blur(5px);
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid hsl(var(--bottomColor));
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,7 +23,7 @@
 .topbar__title {
   font-size: 20px;
   font-weight: bold;
-  color: #393145;
+  color: hsl(var(--accentColor));
 }
 
 .topbar__user {
@@ -36,8 +36,4 @@
   height: 40px;
   border-radius: 50%;
   margin-right: 5px;
-}
-
-.topbar__username {
-  color: grey;
 }

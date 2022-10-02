@@ -1,18 +1,18 @@
 .sidebar {
   height: 100%;
-  background-color: rgb(255, 255, 255);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  background-color: hsl(var(--accentColor));
+  box-shadow: var(--boxShadow);
   position: fixed;
 }
 
 .sidebar__wrapper {
   padding: 20px;
-  color: #555;
+  color: hsla(var(--primaryTextColor), 0.5);
 }
 
 .sidebar__title {
   font-size: 15px;
-  color: #9ca3af;
+  color: hsl(var(--primaryTextColor));
   margin: 2rem 0;
 }
 
@@ -27,9 +27,13 @@
 
 .sidebar__item.active,
 .sidebar__item:hover {
-  color: white;
-  background-color: #393145;
-  margin-bottom: 1rem;
+  color: hsl(var(--primaryTextColor));
+  background-color: hsla(var(--primaryBg), 0.1);
+}
+
+.sidebar__item:hover {
+  margin: 0.5rem 0;
+  transition: var(--transition);
 }
 
 .sidebar__icon {
