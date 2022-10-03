@@ -44,7 +44,7 @@ export default function Chart({ data, chartType }) {
       tooltip: {
         y: {
           formatter: function (val) {
-            return 'Team ' + val;
+            return 'Score ' + val;
           },
         },
       },
