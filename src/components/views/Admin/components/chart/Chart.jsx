@@ -1,5 +1,5 @@
 import ApexChart from 'react-apexcharts';
-import { getRoundNames } from './helpers';
+import { getXAxisCategories } from './helpers';
 import './Chart.css';
 
 export default function Chart({ data, chartType }) {
@@ -23,7 +23,7 @@ export default function Chart({ data, chartType }) {
         },
       },
       dataLabels: {
-        enabled: true,
+        enabled: false,
       },
       stroke: {
         show: true,
@@ -31,7 +31,7 @@ export default function Chart({ data, chartType }) {
         colors: ['transparent'],
       },
       xaxis: {
-        categories: getRoundNames(data),
+        categories: getXAxisCategories('Team', data[0]?.scores),
       },
       yaxis: {
         title: {
@@ -44,7 +44,7 @@ export default function Chart({ data, chartType }) {
       tooltip: {
         y: {
           formatter: function (val) {
-            return 'Score ' + val;
+            return 'Team ' + val;
           },
         },
       },

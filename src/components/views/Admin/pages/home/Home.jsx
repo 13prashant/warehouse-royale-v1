@@ -6,10 +6,9 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 // Components
 import Chart from '../../components/chart/Chart';
-// Helpers
-import iriChartData from './helpers/iri-chart-data.json';
 // Css
 import './Home.css';
+import pointData from '../../../../../mockData/point-chart-data.json';
 
 const metricItems = ['Point', 'IRI', 'No. of Employees', 'Individual Turnover'];
 const roundItems = [1, 2, 3, 4];
@@ -17,12 +16,12 @@ const roundItems = [1, 2, 3, 4];
 export default function Home() {
   const [pMetric, setPMetric] = useState('Point');
   const [round, setRound] = useState(1);
-  const [chartData, setChartData] = useState(iriChartData);
+  const [chartData, setChartData] = useState(pointData);
 
   useEffect(() => {
     switch (pMetric) {
       case 'Point':
-        setChartData(iriChartData);
+        setChartData(pointData);
         break;
       case 'IRI':
         setChartData([]);
