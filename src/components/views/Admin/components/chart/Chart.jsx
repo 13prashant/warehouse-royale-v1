@@ -38,6 +38,7 @@ export default function Chart({ data, chartType }) {
           text: 'Score',
         },
       },
+      colors: ['#003f5c', '#58508d', '#bc5090', '#ff6361', '#ffa600'],
       fill: {
         opacity: 1,
       },
