@@ -1,8 +1,4 @@
-.home {
-  flex: 4;
-}
-
 .home__chart {
-  padding: 2rem;
+  padding: 2rem 0;
   margin: 1rem;
 }

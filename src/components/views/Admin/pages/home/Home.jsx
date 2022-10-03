@@ -40,12 +40,13 @@ export default function Home() {
 
   return (
     <div className="home">
-      <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
+      <FormControl sx={{ m: 1, minWidth: 120 }}>
         <InputLabel id="demo-simple-select-filled-label">Metric</InputLabel>
         <Select
           labelId="demo-simple-select-filled-label"
           id="demo-simple-select-filled"
           value={pMetric}
+          label="Metric"
           onChange={(e) => setPMetric(e.target.value)}
         >
           {metricItems.map((elm) => (
@@ -55,12 +56,13 @@ export default function Home() {
           ))}
         </Select>
       </FormControl>
-      <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
+      <FormControl sx={{ m: 1, minWidth: 120 }}>
         <InputLabel id="demo-simple-select-filled-label">Round</InputLabel>
         <Select
           labelId="demo-simple-select-filled-label"
           id="demo-simple-select-filled"
           value={round}
+          label="Round"
           onChange={(e) => setRound(e.target.value)}
         >
           {roundItems.map((elm) => (
