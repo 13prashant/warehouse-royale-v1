@@ -5,15 +5,13 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 // Components
+import WarehouseHeader from '../../../../components/ui/WarehouseHeader';
 import WarehouseCard from '../../../../components/ui/WarehouseCard';
-import Chart from '../../components/chart/Chart';
+import Chart from '../../../../components/chart/Chart';
 // Css
 import './Home.css';
 import pointData from '../../../../mockData/point-chart-data.json';
-import WarehouseHeader from '../../../../components/ui/WarehouseHeader';
-
-const metricItems = ['Point', 'IRI', 'No. of Employees', 'Individual Turnover'];
-const roundItems = [1, 2, 3, 4];
+import { getXAxisCategories, metricItems, roundItems } from './helpers';
 
 export default function Home() {
   const [pMetric, setPMetric] = useState('Point');
@@ -43,7 +41,7 @@ export default function Home() {
   return (
     <div className="home">
       <WarehouseHeader title="Team Score">
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
           <InputLabel id="demo-simple-select-filled-label">Metric</InputLabel>
           <Select
             labelId="demo-simple-select-filled-label"
@@ -59,7 +57,7 @@ export default function Home() {
             ))}
           </Select>
         </FormControl>
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
           <InputLabel id="demo-simple-select-filled-label">Round</InputLabel>
           <Select
             labelId="demo-simple-select-filled-label"
@@ -77,7 +75,17 @@ export default function Home() {
         </FormControl>
       </WarehouseHeader>
       <WarehouseCard>
-        <Chart data={chartData} chartType="bar" />
+        <Chart
+          series={chartData.map((elm) => {
+            return {
+              name: elm.name,
+              data: elm.scores,
+            };
+          })}
+          xAxis={getXAxisCategories('Team', chartData[0].scores)}
+          type="column"
+          chartType="bar"
+        />
       </WarehouseCard>
     </div>
   );
