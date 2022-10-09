@@ -1,13 +1,18 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 // Material components
+import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 // React Icons
 import { MdDelete, MdOutlineFileUpload } from 'react-icons/md';
+// Components
+import WarehouseCard from '../../../../components/ui/WarehouseCard';
+import WarehouseButton from '../../../../components/ui/WarehouseButton';
 // Helpers
 import { users } from './helpers';
 // Css
 import './UserList.css';
+import WarehouseHeader from '../../../../components/ui/WarehouseHeader';
 
 export default function UserList() {
   const [data, setData] = useState(users);
@@ -47,8 +52,12 @@ export default function UserList() {
       width: 200,
       renderCell: (params) => {
         return (
-          <div className="userListUser">
-            <img className="userListImg" src={params.row.avatar} alt="" />
+          <div className="userList__user">
+            <img
+              className="userList__avatar"
+              src={params.row.avatar}
+              alt={params.row.username}
+            />
             {params.row.username}
           </div>
         );
@@ -73,10 +82,10 @@ export default function UserList() {
         return (
           <>
             <Link to={'/users/' + params.row.id}>
-              <button className="userListEdit">Edit</button>
+              <WarehouseButton text="Edit" sm success />
             </Link>
             <MdDelete
-              className="userListDelete"
+              className="userList__delete"
               onClick={() => handleDelete(params.row.id)}
             />
           </>
@@ -86,49 +95,37 @@ export default function UserList() {
   ];
 
   return (
-    <div className="parentContainer">
-      <div className="userTitleContainer">
-        <h1 className="userTitle">Edit User</h1>
+    <div className="userList">
+      <WarehouseHeader>
         <Link to="/newUser">
-          <button className="userAddButton" style={{ fontSize: '1.25rem' }}>
-            Create
-          </button>
-        </Link>
-      </div>
-      <div className="userList">
-        <DataGrid
-          rows={data}
-          disableSelectionOnClick
-          columns={columns}
-          pageSize={8}
-          checkboxSelection
-        />
-      </div>
-      <div className="excelSheet">
-        <h1 className="uploadTitle"> Upload an Excelsheet Instead ! </h1>
-        <div className="iconDiv">
+          <WarehouseButton text="Create new user" />
+        </Link>{' '}
+      </WarehouseHeader>
+      <WarehouseCard>
+        <Box sx={{ height: 450, width: '100%' }}>
+          <DataGrid
+            rows={data}
+            columns={columns}
+            pageSize={6}
+            rowsPerPageOptions={[6]}
+            checkboxSelection
+            disableSelectionOnClick
+          />
+        </Box>
+      </WarehouseCard>
+      <WarehouseHeader title="Upload an Excel Sheet instead!" mx />
+      <WarehouseCard>
+        <div className="userList__upload">
           <label>
             <input type="file" onChange={handleOnFileChange} />
-            <MdOutlineFileUpload className="uploadIcon" />
+            <MdOutlineFileUpload className="userList__uploadIcon" />
           </label>
-          <div className="sub2">
-            {file && <p>{file.name}</p>}
-            {fileError && <p style={{ color: 'red' }}>{fileError}</p>}
-            <h3 className="uploadMessage">
-              Click on the icon to select the Excel file
-            </h3>
-          </div>
+          <h3>Select file</h3>
+          {file && <p>{file.name}</p>}
+          {fileError && <p style={{ color: 'red' }}>{fileError}</p>}
+          <WarehouseButton text="Upload file" />
         </div>
-        <div className="buttonDiv">
-          <button
-            className="excelButton"
-            disabled={!file}
-            onClick={handleFileUpload}
-          >
-            Upload a File
-          </button>
-        </div>
-      </div>
+      </WarehouseCard>
     </div>
   );
 }

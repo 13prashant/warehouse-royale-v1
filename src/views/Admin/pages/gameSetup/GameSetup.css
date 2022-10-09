@@ -1,48 +1,10 @@
-.features {
-  flex: 4;
-  font-size: 2em;
-  align-items: center;
+.gameSetup__inputs {
+  display: flex;
+  gap: 1rem;
+}
+
+.gameSetup__questions {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  height: 100%;
-}
-
-.feature-innver-div {
-  padding: 15px 50px 50px;
-  box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
-}
-
-form {
-  margin-top: 0.5em;
-}
-
-.inputValues {
-  display: flex;
-  margin-right: 3px;
-}
-
-.yesno {
-  /* padding: 0.3cm; */
-}
-
-.FormLabel {
-  color: red;
-}
-
-.submitbutton {
-  width: 120px;
-  border: none;
-  border-radius: 10%;
-  padding: 10px 10px;
-  font-size: x-large;
-  background-color: #3bb077;
-  color: white;
-  cursor: pointer;
-  margin-right: 20px;
-}
-
-.buttonDiv {
-  text-align: center;
+  gap: 2rem;
 }

@@ -4,7 +4,7 @@ import MDashboard from './views/Manager/MDashboard';
 import LoginForm from './components/LoginForm';
 
 function App() {
-  const [user, setUser] = useState('manager');
+  const [user, setUser] = useState('admin');
 
   return (
     <>

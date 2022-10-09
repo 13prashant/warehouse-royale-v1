@@ -5,10 +5,12 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 // Components
+import WarehouseCard from '../../../../components/ui/WarehouseCard';
 import Chart from '../../components/chart/Chart';
 // Css
 import './Home.css';
 import pointData from '../../../../mockData/point-chart-data.json';
+import WarehouseHeader from '../../../../components/ui/WarehouseHeader';
 
 const metricItems = ['Point', 'IRI', 'No. of Employees', 'Individual Turnover'];
 const roundItems = [1, 2, 3, 4];
@@ -40,41 +42,43 @@ export default function Home() {
 
   return (
     <div className="home">
-      <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-simple-select-filled-label">Metric</InputLabel>
-        <Select
-          labelId="demo-simple-select-filled-label"
-          id="demo-simple-select-filled"
-          value={pMetric}
-          label="Metric"
-          onChange={(e) => setPMetric(e.target.value)}
-        >
-          {metricItems.map((elm) => (
-            <MenuItem key={elm} value={elm}>
-              {elm}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-      <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-simple-select-filled-label">Round</InputLabel>
-        <Select
-          labelId="demo-simple-select-filled-label"
-          id="demo-simple-select-filled"
-          value={round}
-          label="Round"
-          onChange={(e) => setRound(e.target.value)}
-        >
-          {roundItems.map((elm) => (
-            <MenuItem key={elm} value={elm}>
-              {elm}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-      <div className="home__chart">
+      <WarehouseHeader title="Team Score">
+        <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id="demo-simple-select-filled-label">Metric</InputLabel>
+          <Select
+            labelId="demo-simple-select-filled-label"
+            id="demo-simple-select-filled"
+            value={pMetric}
+            label="Metric"
+            onChange={(e) => setPMetric(e.target.value)}
+          >
+            {metricItems.map((elm) => (
+              <MenuItem key={elm} value={elm}>
+                {elm}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+        <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id="demo-simple-select-filled-label">Round</InputLabel>
+          <Select
+            labelId="demo-simple-select-filled-label"
+            id="demo-simple-select-filled"
+            value={round}
+            label="Round"
+            onChange={(e) => setRound(e.target.value)}
+          >
+            {roundItems.map((elm) => (
+              <MenuItem key={elm} value={elm}>
+                {elm}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      </WarehouseHeader>
+      <WarehouseCard>
         <Chart data={chartData} chartType="bar" />
-      </div>
+      </WarehouseCard>
     </div>
   );
 }
