@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default function WarehouseButton({ text, sm, success, onClick }) {
+export default function WarehouseButton({ text, sm, success, ...rest }) {
   const warehouseButtonStyle = {
     border: 'none',
     borderRadius: '0.3rem',
@@ -11,7 +11,7 @@ export default function WarehouseButton({ text, sm, success, onClick }) {
   };
 
   return (
-    <button style={warehouseButtonStyle} onClick={(e) => onClick(e)}>
+    <button {...rest} style={warehouseButtonStyle}>
       {text}
     </button>
   );
@@ -21,7 +21,6 @@ WarehouseButton.propTpes = {
   text: PropTypes.string.isRequired,
   sm: PropTypes.bool,
   success: PropTypes.bool,
-  onClick: PropTypes.func,
 };
 
 WarehouseButton.defaultProps = {

@@ -3,7 +3,7 @@
   height: var(--topbarHeight);
   background-color: hsla(var(--primaryBg), 0.7);
   backdrop-filter: blur(5px);
-  border-bottom: 1px solid hsl(var(--bottomColor));
+  border-bottom: 1px solid hsl(var(--borderBottomColor));
   display: flex;
   justify-content: space-between;
   align-items: center;

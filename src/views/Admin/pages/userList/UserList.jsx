@@ -113,7 +113,7 @@ export default function UserList() {
           />
         </Box>
       </WarehouseCard>
-      <WarehouseHeader title="Upload an Excel Sheet instead!" mx />
+      <WarehouseHeader title="Upload an Excel Sheet instead!" my />
       <WarehouseCard>
         <div className="userList__upload">
           <label>
@@ -123,7 +123,11 @@ export default function UserList() {
           <h3>Select file</h3>
           {file && <p>{file.name}</p>}
           {fileError && <p style={{ color: 'red' }}>{fileError}</p>}
-          <WarehouseButton text="Upload file" />
+          <WarehouseButton
+            onClick={handleFileUpload}
+            disabled={!file}
+            text="Upload file"
+          />
         </div>
       </WarehouseCard>
     </div>

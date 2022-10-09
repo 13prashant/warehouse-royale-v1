@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 
-export default function WarehouseHeader({ title, mx, children }) {
+export default function WarehouseHeader({ title, my, children }) {
   const warehouseHeaderStyle = {
-    margin: `${mx ? '2rem 0 1rem' : '0'}`,
+    margin: `${my ? '2rem 0 1rem' : '0 0 1rem'}`,
     padding: '1rem',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+    borderBottom: '1px solid hsl(var(--borderBottomColor))',
   };
 
   return (
@@ -19,10 +20,10 @@ export default function WarehouseHeader({ title, mx, children }) {
 
 WarehouseHeader.propTypes = {
   title: PropTypes.string.isRequired,
-  mx: PropTypes.bool,
+  my: PropTypes.bool,
 };
 
 WarehouseHeader.defaultProps = {
   title: '',
-  mx: false,
+  my: false,
 };
