@@ -2,7 +2,12 @@ import {
   FcConferenceCall,
   FcPositiveDynamic,
   FcServices,
+  FcMindMap,
+  FcGoodDecision,
+  FcApproval,
 } from 'react-icons/fc';
+import { MdSettingsSuggest } from 'react-icons/md';
+
 import { TiMessages } from 'react-icons/ti';
 import { getRandomHsl } from '../utils/functions/getRandomHsl';
 
@@ -32,7 +37,7 @@ export const aDashboardSidebarConfig = [
 export const mDashboardSidebarConfig = [
   {
     item: 'Performance Metric',
-    icon: <FcPositiveDynamic className="sidebar__icon" />,
+    icon: <FcMindMap className="sidebar__icon" />,
     path: '/',
   },
   {
@@ -42,7 +47,7 @@ export const mDashboardSidebarConfig = [
   },
   {
     item: 'Recruitment Room',
-    icon: <FcServices className="sidebar__icon" />,
+    icon: <FcGoodDecision className="sidebar__icon" />,
     path: '/recruitment-room',
   },
   {
@@ -52,12 +57,12 @@ export const mDashboardSidebarConfig = [
   },
   {
     item: 'Operation Room',
-    icon: <TiMessages className="sidebar__icon" />,
+    icon: <MdSettingsSuggest className="sidebar__icon" />,
     path: '/operation-room',
   },
   {
     item: 'About',
-    icon: <TiMessages className="sidebar__icon" />,
+    icon: <FcApproval className="sidebar__icon" />,
     path: '/about',
   },
 ];

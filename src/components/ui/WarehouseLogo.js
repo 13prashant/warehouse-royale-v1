@@ -6,7 +6,7 @@ export default function WarehouseLogo() {
       <RiGovernmentFill
         style={{ color: 'black', marginRight: '5px', fontSize: '2rem' }}
       />
-      <span style={{ color: 'white' }}>WareHouse Royale</span>
+      <span>WareHouse Royale</span>
     </div>
   );
 }

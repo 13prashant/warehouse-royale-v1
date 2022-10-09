@@ -16,12 +16,12 @@ export default function MDashboard() {
     <Router>
       <Routes>
         <Route element={<Layout sidebarConfig={mDashboardSidebarConfig} />}>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/my-team" element={<MyTeam />} />
-          <Route exact path="/recruitment-room" element={<RecruitmentRoom />} />
-          <Route exact path="/messenger" element={<Messenger />} />
-          <Route exact path="/operation-room" element={<OperationRoom />} />
-          <Route exact path="/about" element={<About />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/my-team" element={<MyTeam />} />
+          <Route path="/recruitment-room" element={<RecruitmentRoom />} />
+          <Route path="/messenger" element={<Messenger />} />
+          <Route path="/operation-room" element={<OperationRoom />} />
+          <Route path="/about" element={<About />} />
         </Route>
       </Routes>
     </Router>

@@ -16,7 +16,7 @@ export default function ADashboard() {
     <Router>
       <Routes>
         <Route element={<Layout sidebarConfig={aDashboardSidebarConfig} />}>
-          <Route exact path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/users" element={<UserList />} />
           <Route path="/users/:id" element={<User />} />
           <Route path="/new-user" element={<NewUser />} />

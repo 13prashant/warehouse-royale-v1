@@ -5,15 +5,15 @@
   --primaryFont: 'Open Sans', sans-sarif;
 
   --topbarHeight: 70px;
-  --sidebarWidth: 260px;
+  --sidebarWidth: 300px;
 
   --accentColor: 264, 17%, 23%;
 
   --primaryBg: 0, 0%, 100%;
-  --secondaryBg: '';
+  --secondaryBg: 180, 11%, 98%;
 
   --primaryTextColor: 0, 0%, 100%;
-  --secondaryTextColor: '';
+  --secondaryTextColor: 0, 0%, 0%;
 
   --bottomColor: 0, 0%, 83%;
 
