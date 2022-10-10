@@ -2,6 +2,8 @@ import ApexChart from 'react-apexcharts';
 import {
   barChartOptions,
   columnChartOptions,
+  pieChartOptions,
+  stackedColumnChartOptions,
 } from '../../configs/chartConfigs';
 import './Chart.css';
 
@@ -12,14 +14,23 @@ export default function Chart({ type, chartType, series, xAxis }) {
         return barChartOptions;
       case 'column':
         return columnChartOptions;
+      case 'pie':
+        return pieChartOptions;
+      case 'stacked':
+        return stackedColumnChartOptions;
       default:
         return columnChartOptions;
     }
   };
 
+  console.log(xAxis);
   let options = getChartConfig(type);
-
-  options.xaxis.categories = xAxis;
+  if (type === 'bar' || type === 'stacked') {
+    options.xaxis.categories = xAxis;
+  }
+  if (type === 'pie') {
+    options.labels = xAxis;
+  }
 
   return (
     <ApexChart

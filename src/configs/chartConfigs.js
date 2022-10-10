@@ -59,3 +59,56 @@ export const columnChartOptions = {
     },
   },
 };
+
+export const pieChartOptions = {
+  chart: {
+    width: 380,
+    type: 'pie',
+  },
+  labels: [],
+  colors: [COLOR_1, COLOR_2, COLOR_3, COLOR_4, COLOR_5],
+  responsive: [
+    {
+      breakpoint: 480,
+      options: {
+        chart: {
+          width: 200,
+        },
+        legend: {
+          position: 'bottom',
+        },
+      },
+    },
+  ],
+};
+
+export const stackedColumnChartOptions = {
+  chart: {
+    type: 'bar',
+    height: 350,
+    stacked: true,
+    stackType: '100%',
+  },
+  colors: [COLOR_1, COLOR_2, COLOR_3, COLOR_4, COLOR_5],
+  responsive: [
+    {
+      breakpoint: 480,
+      options: {
+        legend: {
+          position: 'bottom',
+          offsetX: -10,
+          offsetY: 0,
+        },
+      },
+    },
+  ],
+  xaxis: {
+    categories: [],
+  },
+  fill: {
+    opacity: 1,
+  },
+  legend: {
+    show: false,
+  },
+};

@@ -11,7 +11,15 @@ import Chart from '../../../../components/chart/Chart';
 // Css
 import './Home.css';
 import pointData from '../../../../mockData/point-chart-data.json';
-import { getXAxisCategories, metricItems, roundItems } from './helpers';
+import { getXAxisCategories } from './helpers';
+
+export const metricItems = [
+  'Point',
+  'IRI',
+  'No. of Employees',
+  'Individual Turnover',
+];
+export const roundItems = [1, 2, 3, 4];
 
 export default function Home() {
   const [pMetric, setPMetric] = useState('Point');
