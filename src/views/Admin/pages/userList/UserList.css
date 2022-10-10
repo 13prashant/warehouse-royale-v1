@@ -12,7 +12,7 @@
 }
 
 .userList__delete {
-  color: rgb(234, 16, 16);
+  color: hsl(0, 87%, 49%);
   font-size: 1.3125rem;
   cursor: pointer;
 }
