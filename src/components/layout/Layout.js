@@ -4,6 +4,7 @@ import Container from '@mui/material/Container';
 // Components
 import Topbar from '../topbar/Topbar';
 import Sidebar from '../sidebar/Sidebar';
+import Footer from '../footer/Footer';
 // Css
 import './Layout.css';
 
@@ -20,6 +21,7 @@ export default function Layout({ sidebarConfig }) {
         <div className="layout__outlet">
           <Container>
             <Outlet />
+            <Footer />
           </Container>
         </div>
       </div>
