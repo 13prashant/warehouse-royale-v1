@@ -7,7 +7,7 @@ export default function WarehouseHeader({ title, my, children }) {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderBottom: '1px solid hsl(var(--borderBottomColor))',
+    borderBottom: '1px solid hsl(var(--borderColor))',
   };
 
   return (

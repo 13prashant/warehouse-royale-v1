@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   height: var(--topbarHeight);
-  border-bottom: 1px solid hsla(var(--borderBottomColor), 1);
+  border-bottom: 1px solid hsla(var(--borderColor), 1);
 }
 
 .sidebar__menu {
@@ -20,21 +20,25 @@
 
 .sidebar__item {
   font-size: 1.1rem;
-  padding: 1.25rem;
+  padding: 1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   border-radius: 10px;
+  margin: 0.5rem 0;
 }
 
-.sidebar__item.active,
-.sidebar__item:hover {
+.sidebar__item.active {
   color: hsl(var(--primaryTextColor));
   background-color: hsl(var(--accentColor));
 }
 
 .sidebar__item:hover {
-  margin: 0.5rem 0;
+  color: hsl(var(--primaryTextColor));
+  background-color: hsla(var(--accentColor), 0.5);
+}
+
+.sidebar__item:hover {
   transition: var(--transition);
 }
 

@@ -6,7 +6,7 @@ import WarehouseLogo from '../ui/WarehouseLogo';
 import './Sidebar.css';
 
 export default function Sidebar({ sidebarConfig }) {
-  const [activeMenu, setActiveMenu] = useState('Home');
+  const [activeMenu, setActiveMenu] = useState(sidebarConfig[0].item);
 
   return (
     <div className="sidebar">

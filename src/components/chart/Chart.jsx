@@ -23,7 +23,6 @@ export default function Chart({ type, chartType, series, xAxis }) {
     }
   };
 
-  console.log(xAxis);
   let options = getChartConfig(type);
   if (type === 'bar' || type === 'stacked') {
     options.xaxis.categories = xAxis;
