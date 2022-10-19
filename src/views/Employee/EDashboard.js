@@ -17,8 +17,8 @@ export default function EDashboard() {
         <Route element={<Layout sidebarConfig={eDashboardSidebarConfig} />}>
           <Route path="/" element={<Home />} />
           <Route path="/my-team" element={<MyTeam />} />
-          <Route path="/recruitment-room" element={<Offers />} />
-          <Route path="/messenger" element={<Chat />} />
+          <Route path="/offers" element={<Offers />} />
+          <Route path="/chat" element={<Chat />} />
           <Route path="/about" element={<About />} />
         </Route>
       </Routes>

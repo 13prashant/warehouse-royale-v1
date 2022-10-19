@@ -23,7 +23,7 @@ export default function WarehouseButton({
   );
 }
 
-WarehouseButton.propTpes = {
+WarehouseButton.propTypes = {
   text: PropTypes.string.isRequired,
   sm: PropTypes.bool,
   success: PropTypes.bool,

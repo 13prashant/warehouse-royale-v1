@@ -82,12 +82,12 @@ export const eDashboardSidebarConfig = [
   {
     item: 'Offers Acceptance',
     icon: <FcApprove className="sidebar__icon" />,
-    path: '/recruitment-room',
+    path: '/offers',
   },
   {
     item: 'Chat/Messenger',
     icon: <TiMessages className="sidebar__icon" color={getRandomHsl()} />,
-    path: '/messenger',
+    path: '/chat',
   },
   {
     item: 'About',
