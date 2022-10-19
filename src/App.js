@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import ADashboard from './views/Admin/ADashboard';
 import MDashboard from './views/Manager/MDashboard';
+import EDashboard from './views/Employee/EDashboard';
 import LoginForm from './components/LoginForm';
 
 function App() {
-  const [user, setUser] = useState('manager');
+  const [user, setUser] = useState('employee');
 
   return (
     <>
@@ -12,6 +13,8 @@ function App() {
         <ADashboard />
       ) : user === 'manager' ? (
         <MDashboard />
+      ) : user === 'employee' ? (
+        <EDashboard />
       ) : (
         <LoginForm />
       )}

@@ -5,6 +5,7 @@ import {
   FcMindMap,
   FcGoodDecision,
   FcApproval,
+  FcApprove,
 } from 'react-icons/fc';
 import { MdSettingsSuggest } from 'react-icons/md';
 
@@ -59,6 +60,34 @@ export const mDashboardSidebarConfig = [
     item: 'Operation Room',
     icon: <MdSettingsSuggest className="sidebar__icon" />,
     path: '/operation-room',
+  },
+  {
+    item: 'About',
+    icon: <FcApproval className="sidebar__icon" />,
+    path: '/about',
+  },
+];
+
+export const eDashboardSidebarConfig = [
+  {
+    item: 'Performance Metric',
+    icon: <FcMindMap className="sidebar__icon" />,
+    path: '/',
+  },
+  {
+    item: 'My Team',
+    icon: <FcConferenceCall className="sidebar__icon" />,
+    path: '/my-team',
+  },
+  {
+    item: 'Offers Acceptance',
+    icon: <FcApprove className="sidebar__icon" />,
+    path: '/recruitment-room',
+  },
+  {
+    item: 'Chat/Messenger',
+    icon: <TiMessages className="sidebar__icon" color={getRandomHsl()} />,
+    path: '/messenger',
   },
   {
     item: 'About',
