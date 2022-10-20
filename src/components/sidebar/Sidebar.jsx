@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 // Components
 import WarehouseLogo from '../ui/WarehouseLogo';
+import SwitchUser from '../SwitchUser';
 // Css
 import './Sidebar.css';
 
@@ -29,6 +30,11 @@ export default function Sidebar({ sidebarConfig }) {
             </Link>
           ))}
         </ul>
+        {process.env.NODE_ENV === 'development' && (
+          <div className="sidebar__switchUser">
+            <SwitchUser />
+          </div>
+        )}
       </div>
     </div>
   );

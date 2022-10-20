@@ -16,6 +16,7 @@
 .sidebar__menu {
   padding: 1.25rem;
   color: hsl(var(--secondaryTextColor));
+  position: relative;
 }
 
 .sidebar__item {
@@ -45,4 +46,11 @@
 .sidebar__icon {
   margin-right: 1rem;
   font-size: 2rem !important;
+}
+
+.sidebar__switchUser {
+  position: absolute;
+  bottom: -10rem;
+  border: 3px solid red;
+  padding: 0.25rem;
 }
