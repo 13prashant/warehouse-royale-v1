@@ -4,6 +4,16 @@
   background-color: hsl(var(--primaryBg));
   box-shadow: var(--boxShadow);
   position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: hsla(var(--accentColor), 0.2);
 }
 
 .sidebar__logo {
