@@ -7,7 +7,8 @@ import {
 } from 'firebase/auth';
 import app from './config';
 
-const auth = getAuth(app);
+export const auth = getAuth(app);
+
 export function emailAuth({ email }) {
   const actionCodeSettings = {
     // URL you want to redirect back to. The domain (www.example.com) for this

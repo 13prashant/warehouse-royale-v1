@@ -1,54 +1,105 @@
+import { useState } from 'react';
+// Hooks
+import useCreateUser from '../../../../hooks/useCreateUser';
+// Components
+import WarehouseHeader from '../../../../components/ui/WarehouseHeader';
+import WarehouseCard from '../../../../components/ui/WarehouseCard';
+import WarehouseButton from '../../../../components/ui/WarehouseButton';
+// Constants
+import { COLLECTION_USERS } from '../../../../utils/constants';
+// Css
 import './NewUser.css';
 
 export default function NewUser() {
+  const [fullName, setFullName] = useState('');
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState(null);
+  const [phone, setPhone] = useState('');
+  const [role, setRole] = useState('employee');
+
+  const { createUser, isPending, error } = useCreateUser();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // TODO: Put validation checks
+
+    createUser(COLLECTION_USERS, {
+      fullName,
+      username,
+      email,
+      password,
+      phone,
+      role,
+    });
+  };
+
   return (
     <div className="newUser">
-      <h1 className="newUserTitle">New User</h1>
-      <form className="newUserForm">
-        <div className="newUserItem">
-          <label>Username</label>
-          <input type="text" placeholder="hmendpar" />
-        </div>
-        <div className="newUserItem">
-          <label>Full Name</label>
-          <input type="text" placeholder="Het Mendpara" />
-        </div>
-        <div className="newUserItem">
-          <label>Email</label>
-          <input type="email" placeholder="hetm@gmail.com" />
-        </div>
-        <div className="newUserItem">
-          <label>Password</label>
-          <input type="password" placeholder="password" />
-        </div>
-        <div className="newUserItem">
-          <label>Phone</label>
-          <input type="text" placeholder="+1 123 456 78" />
-        </div>
-        <div className="newUserItem">
-          <label>Address</label>
-          <input type="text" placeholder="Arizona | USA" />
-        </div>
-        <div className="newUserItem">
-          <label>Gender</label>
-          <div className="newUserGender">
-            <input type="radio" name="gender" id="male" value="male" />
-            <label for="male">Male</label>
-            <input type="radio" name="gender" id="female" value="female" />
-            <label for="female">Female</label>
-            <input type="radio" name="gender" id="other" value="other" />
-            <label for="other">Other</label>
+      <WarehouseHeader title="New User" />
+      <WarehouseCard>
+        <form className="newUser__form" onSubmit={handleSubmit}>
+          <div className="newUser__item">
+            <label>Full Name</label>
+            <input
+              onChange={(e) => setFullName(e.target.value)}
+              value={fullName}
+              type="text"
+              placeholder="Enter full name"
+            />
           </div>
-        </div>
-        <div className="newUserItem">
-          <label>Active</label>
-          <select className="newUserSelect" name="active" id="active">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-        </div>
-        <button className="newUserButton">Create</button>
-      </form>
+          <div className="newUser__item">
+            <label>Username</label>
+            <input
+              onChange={(e) => setUsername(e.target.value)}
+              value={username}
+              type="text"
+              placeholder="Enter a username"
+            />
+          </div>
+          <div className="newUser__item">
+            <label>Email</label>
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              type="email"
+              placeholder="Enter email address"
+            />
+          </div>
+          <div className="newUser__item">
+            <label>Password</label>
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+              type="text" // Keep it text type
+              placeholder="Enter password"
+            />
+          </div>
+          <div className="newUser__item">
+            <label>Phone</label>
+            <input
+              onChange={(e) => setPhone(e.target.value)}
+              value={phone}
+              type="text"
+              placeholder="Enter phone number"
+            />
+          </div>
+          <div className="newUser__item">
+            <label>Role</label>
+            <select
+              onChange={(e) => setRole(e.target.value)}
+              value={role}
+              name="role"
+              id="role"
+            >
+              <option value="manager">Manager</option>
+              <option value="employee">Employee</option>
+            </select>
+          </div>
+          <WarehouseButton text="Create" success type="submit" />
+        </form>
+      </WarehouseCard>
     </div>
   );
 }

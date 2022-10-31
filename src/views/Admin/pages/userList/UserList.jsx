@@ -97,7 +97,7 @@ export default function UserList() {
   return (
     <div className="userList">
       <WarehouseHeader>
-        <Link to="/newUser">
+        <Link to="/new-user">
           <WarehouseButton text="Create new user" />
         </Link>{' '}
       </WarehouseHeader>
