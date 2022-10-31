@@ -5,15 +5,15 @@ import EDashboard from './views/Employee/EDashboard';
 import LoginForm from './components/LoginForm';
 
 function App() {
-  const { user } = useAuthContext();
+  const { user, isAuthReady } = useAuthContext();
 
-  console.log(user);
+  const role = localStorage.getItem('warehouse_user_role');
 
-  return user === 'admin' ? (
+  return isAuthReady && user && role === 'admin' ? (
     <ADashboard />
-  ) : user === 'manager' ? (
+  ) : role === 'manager' ? (
     <MDashboard />
-  ) : user === 'employee' ? (
+  ) : role === 'employee' ? (
     <EDashboard />
   ) : (
     <LoginForm />

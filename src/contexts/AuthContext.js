@@ -1,4 +1,5 @@
 import { createContext, useEffect, useReducer } from 'react';
+import { auth } from '../database/auth';
 
 export const AuthContext = createContext();
 
@@ -31,13 +32,19 @@ export const AuthContextProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    // auth.onAuthStateChanged((user) => {
-    //   if (user) {
-    //     dispatch({ type: IS_AUTH_READY, payload: user });
-    //   } else {
-    //     dispatch({ type: IS_AUTH_READY, payload: null });
-    //   }
-    // });
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        dispatch({
+          type: IS_AUTH_READY,
+          payload: {
+            ...user,
+            role: localStorage.getItem('warehouse_user_role'),
+          },
+        });
+      } else {
+        dispatch({ type: IS_AUTH_READY, payload: null });
+      }
+    });
   }, []);
 
   return (
