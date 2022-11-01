@@ -1,30 +1,34 @@
+import { Link } from 'react-router-dom';
+// Material components
 import { FiUser, FiCalendar, FiUpload } from 'react-icons/fi';
 import { MdOutlineEmail, MdOutlineLocationOn } from 'react-icons/md';
 import { GiSmartphone } from 'react-icons/gi';
-import { Link } from 'react-router-dom';
+// Components
+import WarehouseHeader from '../../../../components/ui/WarehouseHeader';
+import WarehouseButton from '../../../../components/ui/WarehouseButton';
+// Css
 import './User.css';
+import WarehouseCard from '../../../../components/ui/WarehouseCard';
 
 export default function User() {
   return (
     <div className="user">
-      <div className="userTitleContainer">
-        <h1 className="userTitle">Edit User</h1>
+      <WarehouseHeader title="Edit user">
         <Link to="/new-user">
-          <button className="userAddButton">Create</button>
-        </Link>
-      </div>
+          <WarehouseButton text="Create new user" />
+        </Link>{' '}
+      </WarehouseHeader>
       <div className="userContainer">
-        <div className="userShow">
+        <WarehouseCard className="userShow">
           <div className="userShowTop">
             <img
               src="https://asu.pure.elsevier.com/files-asset/129976187/tkull.png?w=160&f=webp"
               alt=""
               className="userShowImg"
             />
-            <div className="userShowTopTitle">
-              <span className="userShowUsername">Het Mendpara</span>
-              <span className="userShowUserTitle">Software Engineer</span>
-            </div>
+            <span className="userShowUsername">
+              Het <br /> Mendpara
+            </span>
           </div>
           <div className="userShowBottom">
             <span className="userShowTitle">Account Details</span>
@@ -50,9 +54,8 @@ export default function User() {
               <span className="userShowInfoTitle">Arizona | USA</span>
             </div>
           </div>
-        </div>
-        <div className="userUpdate">
-          <span className="userUpdateTitle">Edit</span>
+        </WarehouseCard>
+        <WarehouseCard className="userUpdate">
           <form className="userUpdateForm">
             <div className="userUpdateLeft">
               <div className="userUpdateItem">
@@ -108,10 +111,10 @@ export default function User() {
                 </label>
                 <input type="file" id="file" style={{ display: 'none' }} />
               </div>
-              <button className="userUpdateButton">Update</button>
+              <WarehouseButton text="Update" success />
             </div>
           </form>
-        </div>
+        </WarehouseCard>
       </div>
     </div>
   );
