@@ -1,6 +1,11 @@
 import { useState } from 'react';
+// Hooks
 import useLogin from '../hooks/useLogin';
+// Material components
 import Container from '@mui/system/Container';
+// Components
+import WarehouseSnackbar from './ui/WarehouseSnackbar';
+import WarehouseButton from './ui/WarehouseButton';
 // Css
 import './../style/LoginForm.css';
 
@@ -8,7 +13,7 @@ function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const { login } = useLogin();
+  const { login, isPending, error } = useLogin();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -52,15 +57,12 @@ function LoginForm() {
                   value={password}
                 />
               </div>
-              {/* {error != null ? (
-                <div className="loginForm__error">{error}</div>
-              ) : (
-                ''
-              )} */}
-              <input
+              {error && <WarehouseSnackbar text={error} />}
+              <WarehouseButton
                 className="loginForm__button"
                 type="submit"
-                value="LOGIN"
+                text="LOGIN"
+                loading={isPending}
               />
             </div>
           </div>

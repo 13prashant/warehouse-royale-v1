@@ -100,12 +100,3 @@
   margin-top: 3rem;
   cursor: pointer;
 }
-
-.loginForm__error {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fb2d00;
-  margin-bottom: 2em;
-}
