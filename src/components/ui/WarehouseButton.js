@@ -16,7 +16,7 @@ export default function WarehouseButton({
     borderRadius: '0.3rem',
     padding: `${sm ? '0.3125rem 1rem' : '0.625rem 1rem'}`,
     backgroundColor: `${
-      loading ? 'd3d3d3' : success ? '#3bb077' : warning ? '#ea1010' : '#3f51b5'
+      loading ? 'grey' : success ? '#3bb077' : warning ? '#ea1010' : '#3f51b5'
     }`,
     color: '#ffffff',
     cursor: `${loading ? 'unset' : 'pointer'}`,
